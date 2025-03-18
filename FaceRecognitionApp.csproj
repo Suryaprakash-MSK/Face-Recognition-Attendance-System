@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>2dc324bb-0f4e-4ac7-aa35-732f57cb5634</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="SavedImages\**" />
+    <Compile Remove="TempImages\**" />
+    <EmbeddedResource Remove="SavedImages\**" />
+    <EmbeddedResource Remove="TempImages\**" />
+    <None Remove="SavedImages\**" />
+    <None Remove="TempImages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AForge.Video" Version="2.2.5" />
+    <PackageReference Include="AForge.Video.DirectShow" Version="2.2.5" />
+    <PackageReference Include="SeetaFace6Sharp" Version="1.0.10" />
+    <PackageReference Include="SeetaFace6Sharp.Extension.DependencyInjection" Version="1.0.10" />
+    <PackageReference Include="SeetaFace6Sharp.Extension.ImageSharp" Version="1.0.10" />
+    <PackageReference Include="SeetaFace6Sharp.Extension.SkiaSharp" Version="1.0.10" />
+    <PackageReference Include="SeetaFace6Sharp.Extension.SystemDrawing" Version="1.0.10" />
+    <PackageReference Include="SeetaFace6Sharp.model.face_detector" Version="1.0.0" />
+    <PackageReference Include="SeetaFace6Sharp.model.face_recognizer" Version="1.0.0" />
+    <PackageReference Include="SkiaSharp" Version="3.116.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="SeetaFace6Sharp">
+      <HintPath>..\..\SeetaFace6Sharp\src\SeetaFace6Sharp\Examples\SeetaFace6Sharp.Example.VideoForm\bin\Debug\SeetaFace6Sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
